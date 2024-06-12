@@ -2,9 +2,10 @@ export default function ComplexDashboardLayout({
   children,
   notifications,
   revenue,
-  users,
+  users,login
 }) {
-  return (
+  const IsLoggedin = true;
+  return IsLoggedin ? (
     <div>
       <div>{children}</div>
       <div style={{display: "flex"}}>
@@ -15,5 +16,8 @@ export default function ComplexDashboardLayout({
         <div style={{display: "flex" , flex: "1"}}>{notifications}</div>
       </div>
     </div>
-  );
+  ) : (
+    login
+  )
+  
 }
